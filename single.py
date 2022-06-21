@@ -46,7 +46,7 @@ def listen_to_service(service_id: str, location_name: str):
             for item in data['Results']:
                 if dates.get(service_id) is None or item in dates.get(service_id):
                     continue
-                print("New date:", item, "at", location_name)
+                print("New date:", item, "at", location_name, datetime.now())
             dates[service_id] = data['Results']
         except Exception as e:
             # print(e)
